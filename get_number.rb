@@ -16,6 +16,6 @@ puts "I've got a random number between 1 and 100."
 puts "Can you guess it?"
 target = rand(100) + 1
 
+# Track how many guesses the player has made
 num_guesses = 0
-remaining_guesses = 10 - num_guesses
-puts remaining_guesses.to_s + " guesses left."
+puts "You've got #{10 - num_guesses} guesses left."
