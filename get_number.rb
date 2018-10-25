@@ -39,6 +39,6 @@ elsif guess == target
 end
 
 # If player runs out of turns, tell them what the number was.
-if not guessed_it
+unless guessed_it
     puts "Sorry, you didn't get my number (it was #{target})"
 end
