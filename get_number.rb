@@ -23,7 +23,7 @@ puts "You've got #{10 - num_guesses} guesses left."
 # Track whether the user has guessed correctly
 guessed_it = false
 
-while num_guesses < 10 and not guessed_it   
+until num_guesses == 10 or guessed_it   
     print "Make a guess: "
     guess = gets.to_i
 
