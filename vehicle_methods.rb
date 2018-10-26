@@ -16,5 +16,5 @@ def use_headlights(brightness = "low-beam")
 end
 
 def mileage(miles_driven, gas_used)
-    return miles_driven / gas_used
+    miles_driven / gas_used
 end
