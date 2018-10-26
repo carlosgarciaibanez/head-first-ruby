@@ -15,6 +15,6 @@ def use_headlights(brightness = "low-beam")
     puts "Watch out for deers!"
 end
 
-sound_horn
-accelerate
-use_headlights
+def mileage(miles_driven, gas_used)
+    return miles_driven / gas_used
+end
