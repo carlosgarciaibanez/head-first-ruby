@@ -11,11 +11,17 @@ end
 
 class Dog
     
-    def make_up_name
-        @name = "Sandy"
+    def name=(name)
+        @name = name
     end
-    def make_up_age
-        @age = 5
+    def name
+        @name
+    end
+    def age=(age)
+        @age = age
+    end
+    def age
+        @age
     end
 
     def talk
@@ -40,13 +46,13 @@ class Cat
 end
 
 bird = Bird.new
-dog = Dog.new
-dog.make_up_name
-dog.make_up_age
+sandy = Dog.new
+sandy.name = "Sandy"
+sandy.age = 5
 cat = Cat.new
 
 bird.move("tree")
-dog.talk
-dog.report_age
+sandy.talk
+sandy.report_age
 bird.talk
 cat.move("house")
