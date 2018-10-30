@@ -11,7 +11,23 @@ end
 
 class Dog
     
-    attr_accessor :name, :age
+    attr_reader :name, :age
+
+    def name=(value)
+        if value == ""
+            puts "The name cannot be blank!"
+        else
+            @name = value
+        end
+    end
+
+    def age=(value) 
+        if value < 0
+            puts "An age of #{value} is not valid!"
+        else
+            @age = value
+        end
+    end
     
     def talk
         puts "#{@name} says Bark!"
