@@ -15,18 +15,16 @@ class Dog
 
     def name=(value)
         if value == ""
-            puts "The name cannot be blank!"
-        else
-            @name = value
+            raise "The name cannot be blank!"
         end
+        @name = value
     end
 
     def age=(value) 
         if value < 0
-            puts "An age of #{value} is not valid!"
-        else
-            @age = value
+            raise "An age of #{value} is not valid!"
         end
+        @age = value
     end
     
     def talk
