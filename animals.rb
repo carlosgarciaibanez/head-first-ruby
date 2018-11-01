@@ -44,6 +44,10 @@ class Dog < Animal
     def talk
         puts "#{@name} says Bark!"
     end
+
+    def to_s
+        "#{@name} the dog, age #{@age}"
+    end
 end
 
 class Cat < Animal
@@ -64,6 +68,7 @@ sandy.name = "Sandy"
 sandy.age = 5
 sandy.talk
 sandy.report_age
+puts sandy
 
 polly = Bird.new
 polly.name = "Polly"
