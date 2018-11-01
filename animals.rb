@@ -33,7 +33,7 @@ end
 
 class Bird < Animal
     def talk
-        puts "Chirp! Chirp!"
+        puts "#{@name} says Chirp! Chirp!"
     end
     def move(destination)
         puts "#{@name} flies to the #{destination}"
@@ -48,8 +48,15 @@ end
 
 class Cat < Animal
     def talk
-        puts "Meow!"
+        puts "#{@name} says Meow!"
     end    
+end
+
+class Armadillo < Animal
+    def move(destination)
+        puts "#{@name} unrolls!"
+        super(destination)
+    end
 end
 
 sandy = Dog.new
@@ -68,3 +75,7 @@ whiskers.name = "Whiskers"
 whiskers.move("house")
 whiskers.age = 2
 whiskers.report_age
+
+army = Armadillo.new
+army.name = "Army"
+army.move("hole")
