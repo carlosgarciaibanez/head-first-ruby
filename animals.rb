@@ -1,16 +1,6 @@
 #!/usr/bin/ruby
 
-class Bird
-    def talk
-        puts "Chirp! Chirp!"
-    end
-    def move(destination)
-        puts "Flying to the #{destination}"
-    end
-end
-
-class Dog
-    
+class Animal
     attr_reader :name, :age
 
     def name=(value)
@@ -30,6 +20,7 @@ class Dog
     def talk
         puts "#{@name} says Bark!"
     end
+
     def move(destination)
         puts "#{@name} runs to the #{destination}"
     end
@@ -39,23 +30,41 @@ class Dog
     end
 end
 
-class Cat
+
+class Bird < Animal
     def talk
-        puts "Meow!"
+        puts "Chirp! Chirp!"
     end
     def move(destination)
-        puts "Running to the #{destination}"
+        puts "#{@name} flies to the #{destination}"
     end
 end
 
-bird = Bird.new
+class Dog < Animal
+    def talk
+        puts "#{@name} says Bark!"
+    end
+end
+
+class Cat < Animal
+    def talk
+        puts "Meow!"
+    end    
+end
+
 sandy = Dog.new
 sandy.name = "Sandy"
 sandy.age = 5
-cat = Cat.new
-
-bird.move("tree")
 sandy.talk
 sandy.report_age
-bird.talk
-cat.move("house")
+
+polly = Bird.new
+polly.name = "Polly"
+polly.move("tree")
+polly.talk
+
+whiskers = Cat.new
+whiskers.name = "Whiskers"
+whiskers.move("house")
+whiskers.age = 2
+whiskers.report_age
