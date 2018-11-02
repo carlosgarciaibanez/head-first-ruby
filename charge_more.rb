@@ -23,13 +23,13 @@ class Employee
     end
 
     def print_pay_stub
-        puts "Name: #{@name}"
-        pay_for_period = (@salary / 365.0) * 14
+        puts "Name: #{self.name}"
+        pay_for_period = (self.salary / 365.0) * 14
         puts format("Pay This Period: $%.2f", pay_for_period)
     end
 
 end
 
-amy = Employee.new("Amy Blake")
+amy = Employee.new("Amy Blake", 50000.0)
 amy.print_pay_stub
 
