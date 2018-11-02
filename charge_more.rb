@@ -18,8 +18,8 @@ class Employee
     end
 
     def initialize(name = "Anonymous", salary = 0.0)
-        @name = name
-        @salary = salary
+        self.name = name
+        self.salary = salary
     end
 
     def print_pay_stub
