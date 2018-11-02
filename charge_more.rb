@@ -23,8 +23,8 @@ class Employee
     end
 
     def print_pay_stub
-        puts "Name: #{self.name}"
-        pay_for_period = (self.salary / 365.0) * 14
+        puts "Name: #{name}"
+        pay_for_period = (salary / 365.0) * 14
         puts format("Pay This Period: $%.2f", pay_for_period)
     end
 
