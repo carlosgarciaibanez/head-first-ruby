@@ -85,13 +85,14 @@ class HourlyEmployee < Employee
     end
 end
 
-ivan = HourlyEmployee.cashier("Ivan Stokes")
-harold = HourlyEmployee.cashier("harold Nguyen")
-tamara = HourlyEmployee.cashier("Tamara Wells")
-susie = HourlyEmployee.cashier("Susie Powell")
+employees = [
+    HourlyEmployee.cashier("Ivan Stokes"), 
+    HourlyEmployee.cashier("harold Nguyen"), 
+    HourlyEmployee.cashier("Tamara Wells"), 
+    HourlyEmployee.cashier("Susie Powell"), 
+    HourlyEmployee.janitor("Edwin Burgess"), 
+    HourlyEmployee.janitor("Ethel Harris"), 
+    HourlyEmployee.security_guard("Angela Matthews"), 
+    HourlyEmployee.security_guard("Stewart Sanchez")]
 
-edwin = HourlyEmployee.janitor("Edwin Burgess")
-ethel = HourlyEmployee.janitor("Ethel Harris")
-
-angela = HourlyEmployee.security_guard("Angela Matthews")
-stewart = HourlyEmployee.security_guard("Stewart Sanchez")
+employees.each { |employee| employee.print_pay_stub }
