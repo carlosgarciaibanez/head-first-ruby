@@ -72,15 +72,26 @@ class HourlyEmployee < Employee
         puts "Pay This Period: #{formatted_pay}"
     end
 
+    def self.security_guard(name)
+        HourlyEmployee.new(name, 19.25, 30)
+    end
+
+    def self.cashier(name)
+        HourlyEmployee.new(name, 12.75, 25)
+    end
+
+    def self.janitor(name)
+        HourlyEmployee.new(name, 10.50, 20)
+    end
 end
 
-ivan = HourlyEmployee.new("Ivan Stokes", 12.75, 25)
-harold = HourlyEmployee.new("harold Nguyen", 12.75, 25)
-tamara = HourlyEmployee.new("Tamara Wells", 12.75, 25)
-susie = HourlyEmployee.new("Susie Powell", 12.75, 25)
+ivan = HourlyEmployee.cashier("Ivan Stokes")
+harold = HourlyEmployee.cashier("harold Nguyen")
+tamara = HourlyEmployee.cashier("Tamara Wells")
+susie = HourlyEmployee.cashier("Susie Powell")
 
-edwin = HourlyEmployee.new("Edwin Burgess", 10.50, 20)
-ethel = HourlyEmployee.new("Ethel Harris", 10.50, 20)
+edwin = HourlyEmployee.janitor("Edwin Burgess")
+ethel = HourlyEmployee.janitor("Ethel Harris")
 
-angela = HourlyEmployee.new("Angela Matthews", 19.25, 30)
-stewart = HourlyEmployee.new("Setewart Sanchez", 19.25, 30)
+angela = HourlyEmployee.security_guard("Angela Matthews")
+stewart = HourlyEmployee.security_guard("Stewart Sanchez")
