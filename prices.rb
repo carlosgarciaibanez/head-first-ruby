@@ -1,24 +1,26 @@
-def total(prices)
-    amount = 0
+def iterate_prices(prices, &body)
     index = 0
+    amount = 0
     while index < prices.length
-        amount += prices[index]
+        amount += body.call(prices[index])
         index += 1
     end
     amount
+end
+
+def total(prices)
+    iterate_prices(prices) do |price|
+        price
+    end
 end
 
 prices = [3.99, 25.00, 8.99]
 puts format("%.2f", total(prices))
 
 def refund(prices)
-    amount = 0
-    index = 0
-    while index < prices.length
-        amount -= prices[index]
-        index += 1
-    end
-    amount
+    iterate_prices(prices) do |price|
+        -price
+    end    
 end
 
 puts format("%.2f", refund(prices))
