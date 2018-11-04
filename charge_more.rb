@@ -74,8 +74,13 @@ class HourlyEmployee < Employee
 
 end
 
-amy = SalariedEmployee.new("Amy Blake", 50000.0)
-amy.print_pay_stub
+ivan = HourlyEmployee.new("Ivan Stokes", 12.75, 25)
+harold = HourlyEmployee.new("harold Nguyen", 12.75, 25)
+tamara = HourlyEmployee.new("Tamara Wells", 12.75, 25)
+susie = HourlyEmployee.new("Susie Powell", 12.75, 25)
 
-bob = HourlyEmployee.new("Bob Jameson", 7.0, 40)
-bob.print_pay_stub
+edwin = HourlyEmployee.new("Edwin Burgess", 10.50, 20)
+ethel = HourlyEmployee.new("Ethel Harris", 10.50, 20)
+
+angela = HourlyEmployee.new("Angela Matthews", 19.25, 30)
+stewart = HourlyEmployee.new("Setewart Sanchez", 19.25, 30)
