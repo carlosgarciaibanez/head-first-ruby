@@ -9,18 +9,14 @@ def iterate_prices(prices)
 end
 
 def total(prices)
-    iterate_prices(prices) do |price|
-        price
-    end
+    iterate_prices(prices) { |price| price }
 end
 
 prices = [3.99, 25.00, 8.99]
 puts format("%.2f", total(prices))
 
 def refund(prices)
-    iterate_prices(prices) do |price|
-        -price
-    end    
+    iterate_prices(prices) { |price| -price }
 end
 
 puts format("%.2f", refund(prices))
