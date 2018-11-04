@@ -1,8 +1,8 @@
-def iterate_prices(prices, &body)
+def iterate_prices(prices)
     index = 0
     amount = 0
     while index < prices.length
-        amount += body.call(prices[index])
+        amount += yield(prices[index])
         index += 1
     end
     amount
