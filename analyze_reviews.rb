@@ -5,11 +5,6 @@ end
 
 puts lines.length
 
-relevant_lines = []
-lines.each do |line|
-    if line.include?("Truncate")
-        relevant_lines << line
-    end
-end
+relevant_lines = lines.find_all { |line| line.include?("Truncate") }
 
 puts relevant_lines
