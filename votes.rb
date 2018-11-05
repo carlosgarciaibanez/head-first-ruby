@@ -9,4 +9,8 @@ lines.each do |line|
     name.upcase!    
     votes[name] += 1    
 end
-puts votes
+
+votes.each do |name, votes_number|
+    formatted_name = name.split.map { |part| part.capitalize }.join(" ")
+    puts "Candidate #{formatted_name} got #{votes_number} votes"
+end
