@@ -13,6 +13,5 @@ def find_adjective(string)
     words[index + 1]
 end
 
-adjectives = []
-relevant_lines.each { |line| adjectives << find_adjective(line) }
+adjectives = relevant_lines.map { |line| find_adjective(line) }
 puts adjectives
