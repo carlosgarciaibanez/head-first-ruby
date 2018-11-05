@@ -6,7 +6,7 @@ end
 votes = {}
 lines.each do |line|
     name = line.chomp
-    if votes.include?(name)
+    if votes[name]
         votes[name] += 1
     else
         votes[name] = 1
