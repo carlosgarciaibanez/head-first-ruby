@@ -5,6 +5,8 @@ end
 
 puts lines.length
 
-relevant_lines = lines.find_all { |line| line.include?("Truncate") }
+relevant_lines = lines
+    .find_all { |line| line.include?("Truncate") }
+    .reject { |line| line.include?("\t--") }
 
 puts relevant_lines
