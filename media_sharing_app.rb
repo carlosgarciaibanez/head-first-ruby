@@ -1,13 +1,21 @@
-class Clip
-    attr_reader :comments
+module AcceptsComments
 
-    def initialize
-        @comments = []
+    def comments
+        if @comments
+            @comments
+        else
+            @comments = []
+        end
     end
-      
+
     def add_comment(comment)
         comments << comment
     end
+
+end
+
+class Clip
+    include AcceptsComments
 
     def play
         puts "Playing #{object_id}..."
