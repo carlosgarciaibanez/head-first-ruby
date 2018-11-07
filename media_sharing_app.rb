@@ -1,7 +1,7 @@
 module AcceptsComments
 
     def comments
-        @comments = @comments || []
+        @comments ||= []
     end
 
     def add_comment(comment)
