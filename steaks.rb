@@ -2,9 +2,10 @@ class Steak
 
     attr_accessor :grade
 
+    GRADE_SCORES = { "Prime" => 3, "Choice" => 2, "Select" => 1 }
+
     def > (anotherSteak)        
-        grade_scores = { "Prime" => 3, "Choice" => 2, "Select" => 1 }
-        grade_scores[grade] > grade_scores[anotherSteak.grade]
+        GRADE_SCORES[grade] > GRADE_SCORES[anotherSteak.grade]
     end
 end
 
