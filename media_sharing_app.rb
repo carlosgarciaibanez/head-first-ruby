@@ -1,11 +1,7 @@
 module AcceptsComments
 
     def comments
-        if @comments
-            @comments
-        else
-            @comments = []
-        end
+        @comments = @comments || []
     end
 
     def add_comment(comment)
