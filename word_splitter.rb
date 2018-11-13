@@ -5,7 +5,13 @@ class WordSplitter
     include Enumerable 
 
     # The string to split into words.
-    attr_accessor :string
+    attr_reader :string
+
+    # Creates a new instance with its string 
+    # attribute ste to the given string.
+    def initialize(string)
+        @string = string
+    end
 
     # Passes each word in the string to a block, one
     # at a time.
@@ -17,8 +23,7 @@ class WordSplitter
 
 end
 
-splitter = WordSplitter.new
-splitter.string = "one two three four"
+splitter = WordSplitter.new("one two three four")
 
 splitter.each do |word|
     puts word
