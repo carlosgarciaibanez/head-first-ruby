@@ -37,8 +37,12 @@ dinner = ['turkey', nil, "pie"]
 oven = SmallOven.new
 oven.turn_on
 dinner.each do |dish|
-    oven.contents = dish
-    puts "Serving #{oven.bake}"
+    begin
+        oven.contents = dish
+        puts "Serving #{oven.bake}"
+    rescue
+        puts "Error: There's nothing in the oven!"
+    end
 end
 oven.turn_off
 
@@ -46,7 +50,11 @@ oven.turn_off
 dinner = ["turkey", "casserole", "pie"]
 oven = SmallOven.new
 dinner.each do |dish|
-    oven.contents = dish
-    puts "Serving #{oven.bake}"
+    begin
+        oven.contents = dish
+        puts "Serving #{oven.bake}"
+    rescue => exception
+        puts "Error: #{exception.message}"
+    end
 end
 oven.turn_off
