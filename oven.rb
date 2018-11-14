@@ -13,10 +13,10 @@ class SmallOven
 
     def bake
         unless @state == "on"
-            return "You need to turn the oven on first!"
+            raise "You need to turn the oven on first!"
         end
         if @contents == nil
-            return "There's nothing in the oven!"
+            raise "There's nothing in the oven!"
         end
         "golden-brown #{contents}"
     end
