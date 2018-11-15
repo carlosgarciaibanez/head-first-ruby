@@ -62,6 +62,7 @@ dinner.each do |dish|
     rescue OvenOffError => error
         puts "Error: #{error.message}"
         oven.turn_on
+        retry
     end
 end
 oven.turn_off
