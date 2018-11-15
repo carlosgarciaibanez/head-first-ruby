@@ -28,7 +28,7 @@ class SmallOven
     end
 end
 
-# Everything is OK
+puts "\nEverything is OK"
 dinner = ["turkey", "casserole", "pie"]
 oven = SmallOven.new
 oven.turn_on
@@ -38,7 +38,7 @@ dinner.each do |dish|
 end
 oven.turn_off
 
-# Forgot to put a dish in the oven
+puts "\nForgot to put a dish in the oven"
 dinner = ['turkey', nil, "pie"]
 oven = SmallOven.new
 oven.turn_on
@@ -52,7 +52,7 @@ dinner.each do |dish|
 end
 oven.turn_off
 
-# Forgot to turn the oven on
+puts "\nForgot to turn the oven on"
 dinner = ["turkey", "casserole", "pie"]
 oven = SmallOven.new
 dinner.each do |dish|
@@ -66,3 +66,15 @@ dinner.each do |dish|
     end
 end
 oven.turn_off
+
+puts "\nTurn off the oven even when an exception is raised"
+oven = SmallOven.new
+oven.turn_on
+begin 
+    oven.contents = nil
+    puts "Serving #{oven.bake}"
+rescue OvenEmptyError => error
+    puts "Error: #{error.message}"
+ensure
+    oven.turn_off
+end
