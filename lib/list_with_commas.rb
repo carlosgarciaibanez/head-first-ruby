@@ -2,6 +2,9 @@ class ListWithCommas
     attr_accessor :items
 
     def join
+        if items.length == 1
+            return items.first
+        end
         if items.length == 2
             return "#{items.first} and #{items.last}"
         end
