@@ -22,4 +22,10 @@ class MovieStore
         end
     end
 
+    def load(movie_id)
+        @store.transaction do
+            @store[movie_id]
+        end
+    end
+
 end

@@ -21,3 +21,8 @@ post('/movies/create') do
     store.save(@movie)
     redirect '/movies/new'
 end
+
+get('/movies/:movie_id') do
+    @movie = store.load(params['movie_id'].to_i)
+    erb :show
+end
