@@ -5,11 +5,7 @@ require 'movie_store'
 store = MovieStore.new('movies.yaml')
 
 get('/movies') do
-    @movies = ["Jaws", "Psicosis", "Terminator"].map do |title|
-        movie = Movie.new
-        movie.title = title
-        movie
-    end
+    @movies = store.all
     erb :index
 end
 

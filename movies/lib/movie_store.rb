@@ -16,4 +16,10 @@ class MovieStore
         end
     end
 
+    def all
+        @store.transaction do
+            @store.roots.map { |movie_id| @store[movie_id] }
+        end
+    end
+
 end
